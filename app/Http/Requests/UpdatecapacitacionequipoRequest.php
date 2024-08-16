@@ -2,10 +2,10 @@
 
 namespace App\Http\Requests;
 
-use App\Models\capacitacionequipo;
+use App\Models\capacitacionEquipo;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdatecapacitacionequipoRequest extends FormRequest
+class UpdatecapacitacionEquipoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,13 @@ class UpdatecapacitacionequipoRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = capacitacionequipo::$rules;
+        $rules = capacitacionEquipo::$rules;
         
         return $rules;
     }
 
     public function messages()
     {
-        return capacitacionequipo::$messages;
+        return capacitacionEquipo::$messages;
     }
 }

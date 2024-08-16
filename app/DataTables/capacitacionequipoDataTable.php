@@ -2,12 +2,12 @@
 
 namespace App\DataTables;
 
-use App\Models\capacitacionequipo;
+use App\Models\capacitacionEquipo;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Services\DataTable;
 
-class capacitacionequipoDataTable extends DataTable
+class capacitacionEquipoDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -20,13 +20,13 @@ class capacitacionequipoDataTable extends DataTable
 
         return datatables()
             ->eloquent($query)
-            ->addColumn('action', function(capacitacionequipo $capacitacionequipo){
-                $id = $capacitacionequipo->id;
-                return view('capacitacionequipos.datatables_actions',compact('capacitacionequipo','id'));
+            ->addColumn('action', function(capacitacionEquipo $capacitacionEquipo){
+                $id = $capacitacionEquipo->id;
+                return view('capacitacion_equipos.datatables_actions',compact('capacitacionEquipo','id'));
             })
-            ->editColumn('id',function (capacitacionequipo $capacitacionequipo){
+            ->editColumn('id',function (capacitacionEquipo $capacitacionEquipo){
 
-                return $capacitacionequipo->id;
+                return $capacitacionEquipo->id;
 
             })
             ->rawColumns(['action']);
@@ -35,10 +35,10 @@ class capacitacionequipoDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\capacitacionequipo $model
+     * @param \App\Models\capacitacionEquipo $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(capacitacionequipo $model)
+    public function query(capacitacionEquipo $model)
     {
         return $model->newQuery()->select($model->getTable().'.*');
     }
@@ -127,6 +127,6 @@ class capacitacionequipoDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'capacitacionequipos_datatable_' . time();
+        return 'capacitacion_equipos_datatable_' . time();
     }
 }

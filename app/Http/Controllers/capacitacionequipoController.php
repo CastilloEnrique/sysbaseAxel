@@ -2,131 +2,131 @@
 
 namespace App\Http\Controllers;
 
-use App\DataTables\capacitacionequipoDataTable;
-use App\Http\Requests\CreatecapacitacionequipoRequest;
-use App\Http\Requests\UpdatecapacitacionequipoRequest;
+use App\DataTables\capacitacionEquipoDataTable;
+use App\Http\Requests\CreatecapacitacionEquipoRequest;
+use App\Http\Requests\UpdatecapacitacionEquipoRequest;
 use App\Http\Controllers\AppBaseController;
-use App\Models\capacitacionequipo;
+use App\Models\capacitacionEquipo;
 use Illuminate\Http\Request;
 
-class capacitacionequipoController extends AppBaseController
+class capacitacionEquipoController extends AppBaseController
 {
 
     public function __construct()
     {
-        $this->middleware('permission:Ver Capacitacionequipos')->only('show');
-        $this->middleware('permission:Crear Capacitacionequipos')->only(['create','store']);
-        $this->middleware('permission:Editar Capacitacionequipos')->only(['edit','update']);
-        $this->middleware('permission:Eliminar Capacitacionequipos')->only('destroy');
+        $this->middleware('permission:Ver Capacitacion Equipos')->only('show');
+        $this->middleware('permission:Crear Capacitacion Equipos')->only(['create','store']);
+        $this->middleware('permission:Editar Capacitacion Equipos')->only(['edit','update']);
+        $this->middleware('permission:Eliminar Capacitacion Equipos')->only('destroy');
     }
     /**
-     * Display a listing of the capacitacionequipo.
+     * Display a listing of the capacitacionEquipo.
      */
-    public function index(capacitacionequipoDataTable $capacitacionequipoDataTable)
+    public function index(capacitacionEquipoDataTable $capacitacionEquipoDataTable)
     {
-    return $capacitacionequipoDataTable->render('capacitacionequipos.index');
+    return $capacitacionEquipoDataTable->render('capacitacion_equipos.index');
     }
 
 
     /**
-     * Show the form for creating a new capacitacionequipo.
+     * Show the form for creating a new capacitacionEquipo.
      */
     public function create()
     {
-        return view('capacitacionequipos.create');
+        return view('capacitacion_equipos.create');
     }
 
     /**
-     * Store a newly created capacitacionequipo in storage.
+     * Store a newly created capacitacionEquipo in storage.
      */
-    public function store(CreatecapacitacionequipoRequest $request)
+    public function store(CreatecapacitacionEquipoRequest $request)
     {
         $input = $request->all();
 
-        /** @var capacitacionequipo $capacitacionequipo */
-        $capacitacionequipo = capacitacionequipo::create($input);
+        /** @var capacitacionEquipo $capacitacionEquipo */
+        $capacitacionEquipo = capacitacionEquipo::create($input);
 
-        flash()->success('Capacitacionequipo guardado.');
+        flash()->success('Capacitacion Equipo guardado.');
 
-        return redirect(route('capacitacionequipos.index'));
+        return redirect(route('capacitacionEquipos.index'));
     }
 
     /**
-     * Display the specified capacitacionequipo.
+     * Display the specified capacitacionEquipo.
      */
     public function show($id)
     {
-        /** @var capacitacionequipo $capacitacionequipo */
-        $capacitacionequipo = capacitacionequipo::find($id);
+        /** @var capacitacionEquipo $capacitacionEquipo */
+        $capacitacionEquipo = capacitacionEquipo::find($id);
 
-        if (empty($capacitacionequipo)) {
-            flash()->error('Capacitacionequipo no encontrado');
+        if (empty($capacitacionEquipo)) {
+            flash()->error('Capacitacion Equipo no encontrado');
 
-            return redirect(route('capacitacionequipos.index'));
+            return redirect(route('capacitacionEquipos.index'));
         }
 
-        return view('capacitacionequipos.show')->with('capacitacionequipo', $capacitacionequipo);
+        return view('capacitacion_equipos.show')->with('capacitacionEquipo', $capacitacionEquipo);
     }
 
     /**
-     * Show the form for editing the specified capacitacionequipo.
+     * Show the form for editing the specified capacitacionEquipo.
      */
     public function edit($id)
     {
-        /** @var capacitacionequipo $capacitacionequipo */
-        $capacitacionequipo = capacitacionequipo::find($id);
+        /** @var capacitacionEquipo $capacitacionEquipo */
+        $capacitacionEquipo = capacitacionEquipo::find($id);
 
-        if (empty($capacitacionequipo)) {
-            flash()->error('Capacitacionequipo no encontrado');
+        if (empty($capacitacionEquipo)) {
+            flash()->error('Capacitacion Equipo no encontrado');
 
-            return redirect(route('capacitacionequipos.index'));
+            return redirect(route('capacitacionEquipos.index'));
         }
 
-        return view('capacitacionequipos.edit')->with('capacitacionequipo', $capacitacionequipo);
+        return view('capacitacion_equipos.edit')->with('capacitacionEquipo', $capacitacionEquipo);
     }
 
     /**
-     * Update the specified capacitacionequipo in storage.
+     * Update the specified capacitacionEquipo in storage.
      */
-    public function update($id, UpdatecapacitacionequipoRequest $request)
+    public function update($id, UpdatecapacitacionEquipoRequest $request)
     {
-        /** @var capacitacionequipo $capacitacionequipo */
-        $capacitacionequipo = capacitacionequipo::find($id);
+        /** @var capacitacionEquipo $capacitacionEquipo */
+        $capacitacionEquipo = capacitacionEquipo::find($id);
 
-        if (empty($capacitacionequipo)) {
-            flash()->error('Capacitacionequipo no encontrado');
+        if (empty($capacitacionEquipo)) {
+            flash()->error('Capacitacion Equipo no encontrado');
 
-            return redirect(route('capacitacionequipos.index'));
+            return redirect(route('capacitacionEquipos.index'));
         }
 
-        $capacitacionequipo->fill($request->all());
-        $capacitacionequipo->save();
+        $capacitacionEquipo->fill($request->all());
+        $capacitacionEquipo->save();
 
-        flash()->success('Capacitacionequipo actualizado.');
+        flash()->success('Capacitacion Equipo actualizado.');
 
-        return redirect(route('capacitacionequipos.index'));
+        return redirect(route('capacitacionEquipos.index'));
     }
 
     /**
-     * Remove the specified capacitacionequipo from storage.
+     * Remove the specified capacitacionEquipo from storage.
      *
      * @throws \Exception
      */
     public function destroy($id)
     {
-        /** @var capacitacionequipo $capacitacionequipo */
-        $capacitacionequipo = capacitacionequipo::find($id);
+        /** @var capacitacionEquipo $capacitacionEquipo */
+        $capacitacionEquipo = capacitacionEquipo::find($id);
 
-        if (empty($capacitacionequipo)) {
-            flash()->error('Capacitacionequipo no encontrado');
+        if (empty($capacitacionEquipo)) {
+            flash()->error('Capacitacion Equipo no encontrado');
 
-            return redirect(route('capacitacionequipos.index'));
+            return redirect(route('capacitacionEquipos.index'));
         }
 
-        $capacitacionequipo->delete();
+        $capacitacionEquipo->delete();
 
-        flash()->success('Capacitacionequipo eliminado.');
+        flash()->success('Capacitacion Equipo eliminado.');
 
-        return redirect(route('capacitacionequipos.index'));
+        return redirect(route('capacitacionEquipos.index'));
     }
 }
