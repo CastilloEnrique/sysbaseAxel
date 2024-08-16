@@ -40,3 +40,10 @@
         <p>Capacitacion Clientes</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('capacitacionMarcas.index') }}" class="nav-link {{ Request::is('capacitacionMarcas*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>Capacitacion Marcas</p>
+    </a>
+</li>

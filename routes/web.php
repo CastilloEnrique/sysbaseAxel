@@ -69,7 +69,7 @@ Route::group(['prefix' => 'admin','middleware' => ['role:Admin|Superadmin|Develo
     Route::resource('capacitacionEstados', App\Http\Controllers\CapacitacionEstadosController::class);
     Route::resource('capacitacionModelos', App\Http\Controllers\capacitacionModeloController::class);
     Route::resource('capacitacionEquipos', App\Http\Controllers\capacitacionequipoController::class);
-    Route::resource('capacitacionMarcas', App\Http\Controllers\capacitacionmarcaController::class);
+    Route::resource('capacitacionMarcas', App\Http\Controllers\capacitacionMarcasController::class);
     Route::resource('capacitacionClientes', App\Http\Controllers\capacitacionClienteController::class);
 
 
@@ -102,6 +102,7 @@ Route::group(['prefix' => ''], function () {
 
 
 });
+
 
 
 
