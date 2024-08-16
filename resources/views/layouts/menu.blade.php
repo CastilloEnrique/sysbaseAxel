@@ -33,3 +33,10 @@
         <p>Capacitacionclientes</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('capacitacionClientes.index') }}" class="nav-link {{ Request::is('capacitacionClientes*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>Capacitacion Clientes</p>
+    </a>
+</li>

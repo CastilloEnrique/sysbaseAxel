@@ -2,131 +2,131 @@
 
 namespace App\Http\Controllers;
 
-use App\DataTables\capacitacionclienteDataTable;
-use App\Http\Requests\CreatecapacitacionclienteRequest;
-use App\Http\Requests\UpdatecapacitacionclienteRequest;
+use App\DataTables\capacitacionClienteDataTable;
+use App\Http\Requests\CreatecapacitacionClienteRequest;
+use App\Http\Requests\UpdatecapacitacionClienteRequest;
 use App\Http\Controllers\AppBaseController;
-use App\Models\capacitacioncliente;
+use App\Models\capacitacionCliente;
 use Illuminate\Http\Request;
 
-class capacitacionclienteController extends AppBaseController
+class capacitacionClienteController extends AppBaseController
 {
 
     public function __construct()
     {
-        $this->middleware('permission:Ver Capacitacionclientes')->only('show');
-        $this->middleware('permission:Crear Capacitacionclientes')->only(['create','store']);
-        $this->middleware('permission:Editar Capacitacionclientes')->only(['edit','update']);
-        $this->middleware('permission:Eliminar Capacitacionclientes')->only('destroy');
+        $this->middleware('permission:Ver Capacitacion Clientes')->only('show');
+        $this->middleware('permission:Crear Capacitacion Clientes')->only(['create','store']);
+        $this->middleware('permission:Editar Capacitacion Clientes')->only(['edit','update']);
+        $this->middleware('permission:Eliminar Capacitacion Clientes')->only('destroy');
     }
     /**
-     * Display a listing of the capacitacioncliente.
+     * Display a listing of the capacitacionCliente.
      */
-    public function index(capacitacionclienteDataTable $capacitacionclienteDataTable)
+    public function index(capacitacionClienteDataTable $capacitacionClienteDataTable)
     {
-    return $capacitacionclienteDataTable->render('capacitacionclientes.index');
+    return $capacitacionClienteDataTable->render('capacitacion_clientes.index');
     }
 
 
     /**
-     * Show the form for creating a new capacitacioncliente.
+     * Show the form for creating a new capacitacionCliente.
      */
     public function create()
     {
-        return view('capacitacionclientes.create');
+        return view('capacitacion_clientes.create');
     }
 
     /**
-     * Store a newly created capacitacioncliente in storage.
+     * Store a newly created capacitacionCliente in storage.
      */
-    public function store(CreatecapacitacionclienteRequest $request)
+    public function store(CreatecapacitacionClienteRequest $request)
     {
         $input = $request->all();
 
-        /** @var capacitacioncliente $capacitacioncliente */
-        $capacitacioncliente = capacitacioncliente::create($input);
+        /** @var capacitacionCliente $capacitacionCliente */
+        $capacitacionCliente = capacitacionCliente::create($input);
 
-        flash()->success('Capacitacioncliente guardado.');
+        flash()->success('Capacitacion Cliente guardado.');
 
-        return redirect(route('capacitacionclientes.index'));
+        return redirect(route('capacitacionClientes.index'));
     }
 
     /**
-     * Display the specified capacitacioncliente.
+     * Display the specified capacitacionCliente.
      */
     public function show($id)
     {
-        /** @var capacitacioncliente $capacitacioncliente */
-        $capacitacioncliente = capacitacioncliente::find($id);
+        /** @var capacitacionCliente $capacitacionCliente */
+        $capacitacionCliente = capacitacionCliente::find($id);
 
-        if (empty($capacitacioncliente)) {
-            flash()->error('Capacitacioncliente no encontrado');
+        if (empty($capacitacionCliente)) {
+            flash()->error('Capacitacion Cliente no encontrado');
 
-            return redirect(route('capacitacionclientes.index'));
+            return redirect(route('capacitacionClientes.index'));
         }
 
-        return view('capacitacionclientes.show')->with('capacitacioncliente', $capacitacioncliente);
+        return view('capacitacion_clientes.show')->with('capacitacionCliente', $capacitacionCliente);
     }
 
     /**
-     * Show the form for editing the specified capacitacioncliente.
+     * Show the form for editing the specified capacitacionCliente.
      */
     public function edit($id)
     {
-        /** @var capacitacioncliente $capacitacioncliente */
-        $capacitacioncliente = capacitacioncliente::find($id);
+        /** @var capacitacionCliente $capacitacionCliente */
+        $capacitacionCliente = capacitacionCliente::find($id);
 
-        if (empty($capacitacioncliente)) {
-            flash()->error('Capacitacioncliente no encontrado');
+        if (empty($capacitacionCliente)) {
+            flash()->error('Capacitacion Cliente no encontrado');
 
-            return redirect(route('capacitacionclientes.index'));
+            return redirect(route('capacitacionClientes.index'));
         }
 
-        return view('capacitacionclientes.edit')->with('capacitacioncliente', $capacitacioncliente);
+        return view('capacitacion_clientes.edit')->with('capacitacionCliente', $capacitacionCliente);
     }
 
     /**
-     * Update the specified capacitacioncliente in storage.
+     * Update the specified capacitacionCliente in storage.
      */
-    public function update($id, UpdatecapacitacionclienteRequest $request)
+    public function update($id, UpdatecapacitacionClienteRequest $request)
     {
-        /** @var capacitacioncliente $capacitacioncliente */
-        $capacitacioncliente = capacitacioncliente::find($id);
+        /** @var capacitacionCliente $capacitacionCliente */
+        $capacitacionCliente = capacitacionCliente::find($id);
 
-        if (empty($capacitacioncliente)) {
-            flash()->error('Capacitacioncliente no encontrado');
+        if (empty($capacitacionCliente)) {
+            flash()->error('Capacitacion Cliente no encontrado');
 
-            return redirect(route('capacitacionclientes.index'));
+            return redirect(route('capacitacionClientes.index'));
         }
 
-        $capacitacioncliente->fill($request->all());
-        $capacitacioncliente->save();
+        $capacitacionCliente->fill($request->all());
+        $capacitacionCliente->save();
 
-        flash()->success('Capacitacioncliente actualizado.');
+        flash()->success('Capacitacion Cliente actualizado.');
 
-        return redirect(route('capacitacionclientes.index'));
+        return redirect(route('capacitacionClientes.index'));
     }
 
     /**
-     * Remove the specified capacitacioncliente from storage.
+     * Remove the specified capacitacionCliente from storage.
      *
      * @throws \Exception
      */
     public function destroy($id)
     {
-        /** @var capacitacioncliente $capacitacioncliente */
-        $capacitacioncliente = capacitacioncliente::find($id);
+        /** @var capacitacionCliente $capacitacionCliente */
+        $capacitacionCliente = capacitacionCliente::find($id);
 
-        if (empty($capacitacioncliente)) {
-            flash()->error('Capacitacioncliente no encontrado');
+        if (empty($capacitacionCliente)) {
+            flash()->error('Capacitacion Cliente no encontrado');
 
-            return redirect(route('capacitacionclientes.index'));
+            return redirect(route('capacitacionClientes.index'));
         }
 
-        $capacitacioncliente->delete();
+        $capacitacionCliente->delete();
 
-        flash()->success('Capacitacioncliente eliminado.');
+        flash()->success('Capacitacion Cliente eliminado.');
 
-        return redirect(route('capacitacionclientes.index'));
+        return redirect(route('capacitacionClientes.index'));
     }
 }

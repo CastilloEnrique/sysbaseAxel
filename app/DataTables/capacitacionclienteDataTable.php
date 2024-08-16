@@ -2,12 +2,12 @@
 
 namespace App\DataTables;
 
-use App\Models\capacitacioncliente;
+use App\Models\capacitacionCliente;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Services\DataTable;
 
-class capacitacionclienteDataTable extends DataTable
+class capacitacionClienteDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -20,13 +20,13 @@ class capacitacionclienteDataTable extends DataTable
 
         return datatables()
             ->eloquent($query)
-            ->addColumn('action', function(capacitacioncliente $capacitacioncliente){
-                $id = $capacitacioncliente->id;
-                return view('capacitacionclientes.datatables_actions',compact('capacitacioncliente','id'));
+            ->addColumn('action', function(capacitacionCliente $capacitacionCliente){
+                $id = $capacitacionCliente->id;
+                return view('capacitacion_clientes.datatables_actions',compact('capacitacionCliente','id'));
             })
-            ->editColumn('id',function (capacitacioncliente $capacitacioncliente){
+            ->editColumn('id',function (capacitacionCliente $capacitacionCliente){
 
-                return $capacitacioncliente->id;
+                return $capacitacionCliente->id;
 
             })
             ->rawColumns(['action']);
@@ -35,10 +35,10 @@ class capacitacionclienteDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\capacitacioncliente $model
+     * @param \App\Models\capacitacionCliente $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(capacitacioncliente $model)
+    public function query(capacitacionCliente $model)
     {
         return $model->newQuery()->select($model->getTable().'.*');
     }
@@ -127,6 +127,6 @@ class capacitacionclienteDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'capacitacionclientes_datatable_' . time();
+        return 'capacitacion_clientes_datatable_' . time();
     }
 }
