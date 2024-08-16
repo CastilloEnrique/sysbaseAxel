@@ -109,3 +109,5 @@ Route::group(['prefix' => ''], function () {
 
 
 
+
+Route::resource('capacitacionTipos', App\Http\Controllers\capacitacionTipoController::class);

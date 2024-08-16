@@ -61,3 +61,10 @@
         <p>Capacitacion Equipos</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('capacitacionTipos.index') }}" class="nav-link {{ Request::is('capacitacionTipos*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>Capacitacion Tipos</p>
+    </a>
+</li>

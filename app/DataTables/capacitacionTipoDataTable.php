@@ -2,12 +2,12 @@
 
 namespace App\DataTables;
 
-use App\Models\capacitacionModelo;
+use App\Models\capacitacionTipo;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Services\DataTable;
 
-class capacitacionModeloDataTable extends DataTable
+class capacitacionTipoDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -20,13 +20,13 @@ class capacitacionModeloDataTable extends DataTable
 
         return datatables()
             ->eloquent($query)
-            ->addColumn('action', function(capacitacionModelo $capacitacionModelo){
-                $id = $capacitacionModelo->id;
-                return view('capacitacion_modelos.datatables_actions',compact('capacitacionModelo','id'));
+            ->addColumn('action', function(capacitacionTipo $capacitacionTipo){
+                $id = $capacitacionTipo->id;
+                return view('capacitacion_tipos.datatables_actions',compact('capacitacionTipo','id'));
             })
-            ->editColumn('id',function (capacitacionModelo $capacitacionModelo){
+            ->editColumn('id',function (capacitacionTipo $capacitacionTipo){
 
-                return $capacitacionModelo->id;
+                return $capacitacionTipo->id;
 
             })
             ->rawColumns(['action']);
@@ -35,13 +35,12 @@ class capacitacionModeloDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\capacitacionModelo $model
+     * @param \App\Models\capacitacionTipo $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(capacitacionModelo $model)
+    public function query(capacitacionTipo $model)
     {
-        return $model->newQuery()->select($model->getTable().'.*')
-            ->with('marca');
+        return $model->newQuery()->select($model->getTable().'.*');
     }
 
     /**
@@ -108,7 +107,6 @@ class capacitacionModeloDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            Column::make('marca_id')->data('marca.nombre')->title('Marca'),
             Column::make('nombre'),
             Column::computed('action')
                 ->exportable(false)
@@ -125,6 +123,6 @@ class capacitacionModeloDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'capacitacion_modelos_datatable_' . time();
+        return 'capacitacion_tipos_datatable_' . time();
     }
 }

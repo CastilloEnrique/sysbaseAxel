@@ -1,13 +1,25 @@
 <!-- Modelo Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('modelo_id', 'Modelo Id:') !!}
-    {!! Form::number('modelo_id', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::label('modelo_id', 'Modelo') !!}
+    {!! Form::select(
+        'modelo_id',
+        select(\App\Models\capacitacionModelo::class, 'nombre'),
+        ['id' => 'modelo_id', 'class' => 'form-control', 'style' => 'width: 100%']
+
+    ) !!}
 </div>
 
 <!-- Marca Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('marca_id', 'Marca Id:') !!}
-    {!! Form::number('marca_id', null, ['class' => 'form-control', 'required']) !!}
+
+    {!! Form::label('marca_id', 'Marca') !!}
+    {!! Form::select(
+        'marca_id',
+        select(\App\Models\capacitacionMarcas::class, 'nombre'),
+        ['id' => 'marca_id', 'class' => 'form-control', 'style' => 'width: 100%']
+
+    ) !!}
+
 </div>
 
 <!-- Numero Seriie Field -->
@@ -24,6 +36,11 @@
 
 <!-- Tipos Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('tipos_id', 'Tipos Id:') !!}
-    {!! Form::number('tipos_id', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::label('tipo_id', 'Tipo') !!}
+    {!! Form::select(
+        'tipo_id',
+        select(\App\Models\capacitacion::class, 'nombre'),
+        ['id' => 'marca_id', 'class' => 'form-control', 'style' => 'width: 100%']
+
+    ) !!}
 </div>
