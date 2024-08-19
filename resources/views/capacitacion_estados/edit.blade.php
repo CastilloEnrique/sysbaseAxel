@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('titulo_pagina', 'Editar Capacitacion Estados' )
+@section('titulo_pagina', 'Editar Capacitacion Estado' )
 
 @section('content')
 
@@ -10,7 +10,7 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-                        Editar Capacitacion Estados
+                        Editar Capacitacion Estado
                     </h1>
                 </div>
                 <div class="col ">
@@ -35,7 +35,7 @@
 
                     <div class="card">
 
-                        {!! Form::model($capacitacionEstados, ['route' => ['capacitacionEstados.update', $capacitacionEstados->id], 'method' => 'patch','class' => 'esperar']) !!}
+                        {!! Form::model($capacitacionEstado, ['route' => ['capacitacionEstados.update', $capacitacionEstado->id], 'method' => 'patch','class' => 'esperar']) !!}
 
                         <div class="card-body">
                             <div class="form-row">

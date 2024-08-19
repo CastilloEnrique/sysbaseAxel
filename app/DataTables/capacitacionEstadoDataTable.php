@@ -2,12 +2,12 @@
 
 namespace App\DataTables;
 
-use App\Models\capacitacionMarca;
+use App\Models\capacitacionEstado;
 use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Services\DataTable;
 
-class capacitacionMarcaDataTable extends DataTable
+class capacitacionEstadoDataTable extends DataTable
 {
     /**
      * Build DataTable class.
@@ -20,13 +20,13 @@ class capacitacionMarcaDataTable extends DataTable
 
         return datatables()
             ->eloquent($query)
-            ->addColumn('action', function(capacitacionMarca $capacitacionMarca){
-                $id = $capacitacionMarca->id;
-                return view('capacitacion_marcas.datatables_actions',compact('capacitacionMarca','id'));
+            ->addColumn('action', function(capacitacionEstado $capacitacionEstado){
+                $id = $capacitacionEstado->id;
+                return view('capacitacion_estados.datatables_actions',compact('capacitacionEstado','id'));
             })
-            ->editColumn('id',function (capacitacionMarca $capacitacionMarca){
+            ->editColumn('id',function (capacitacionEstado $capacitacionEstado){
 
-                return $capacitacionMarca->id;
+                return $capacitacionEstado->id;
 
             })
             ->rawColumns(['action']);
@@ -35,10 +35,10 @@ class capacitacionMarcaDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\capacitacionMarca $model
+     * @param \App\Models\capacitacionEstado $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(capacitacionMarca $model)
+    public function query(capacitacionEstado $model)
     {
         return $model->newQuery()->select($model->getTable().'.*');
     }
@@ -123,6 +123,6 @@ class capacitacionMarcaDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'capacitacion_marcas_datatable_' . time();
+        return 'capacitacion_estados_datatable_' . time();
     }
 }

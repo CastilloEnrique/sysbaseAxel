@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('titulo_pagina', 'Capacitacion Estados')
+@section('titulo_pagina', 'Capacitacion Estado')
 
 @section('content')
 
@@ -10,7 +10,7 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-                        Capacitacion Estados detalle
+                        Capacitacion Estado detalle
                     </h1>
                 </div>
                 <div class="col ">

@@ -1,13 +1,13 @@
 <!-- Marca Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('marca_id', 'Marca:') !!}
-    {!! Form::select(
-        'marca_id',
-        select(\App\Models\CapacitacionMarca::class, 'nombre'),
-        null,
-        ['id' => 'marca_id', 'class' => 'form-control', 'style' => 'width: 100%']
-
-    ) !!}
+    {!! Form::label('marca_id', 'Marca ') !!}
+        {!!
+        Form::select(
+            'marca_id',
+            select(\App\Models\CapacitacionMarca::class, 'nombre'),
+            null,
+            ['id' => 'marca_id', 'class' => 'form-control', 'required'])
+ !!}
 </div>
 
 <!-- Nombre Field -->

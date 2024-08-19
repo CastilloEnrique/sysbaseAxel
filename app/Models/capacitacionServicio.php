@@ -24,7 +24,7 @@ class capacitacionServicio extends Model
         'fecha_diagnostico',
         'diagnostico',
         'fecha_solucion',
-        'crearted_at'
+        'created_at'
     ];
 
     protected $casts = [
@@ -33,7 +33,7 @@ class capacitacionServicio extends Model
         'fecha_diagnostico' => 'date',
         'diagnostico' => 'string',
         'fecha_solucion' => 'date',
-        'crearted_at' => 'datetime'
+        'created_at' => 'datetime'
     ];
 
     public static $rules = [
@@ -46,7 +46,7 @@ class capacitacionServicio extends Model
         'fecha_diagnostico' => 'nullable',
         'diagnostico' => 'nullable|string|max:65535',
         'fecha_solucion' => 'nullable',
-        'crearted_at' => 'nullable',
+        'created_at' => 'nullable',
         'updated_at' => 'nullable',
         'deleted_at' => 'nullable'
     ];

@@ -25,7 +25,7 @@ return new class extends Migration
             $table->date('fecha_diagnostico')->nullable();
             $table->text('diagnostico')->nullable();
             $table->date('fecha_solucion')->nullable();
-            $table->timestamp('crearted_at')->nullable();
+            $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
             $table->softDeletes();
         });

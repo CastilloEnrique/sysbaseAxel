@@ -1,38 +1,59 @@
 <!-- Cliente Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('clientes_id','Cliente:') !!}
+    {!! Form::label('cliente_id', 'Cliente') !!}
+
     {!!
-        Form::select(
-            'clientes_id',
-            select(\App\Models\CapacitacionMarca::class, 'nombre')
-            , null
-            , ['id'=>'models','class' => 'form-control','style'=>'width: 100%']
-        )
-    !!}
+    Form::select(
+        'cliente_id',
+        select(\App\Models\CapacitacionCliente::class, 'nombres'),
+        null,
+        ['id' => 'cliente_id', 'class' => 'form-control', 'required'])
+
+ !!}
 </div>
 
 <!-- User Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('user_id', 'User Id:') !!}
-    {!! Form::number('user_id', null, ['class' => 'form-control', 'required']) !!}
+    {!!
+    Form::select(
+        'user_id',
+        select(\App\Models\User::class, 'name'),
+        null,
+        ['id' => 'user_id', 'class' => 'form-control', 'required'])
+
+ !!}
 </div>
 
 <!-- Estado Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('estado_id', 'Estado Id:') !!}
-    {!! Form::number('estado_id', null, ['class' => 'form-control', 'required']) !!}
+    {!!
+    Form::select(
+        'estado_id',
+        select(\App\Models\CapacitacionEstado::class, 'nombre'),
+        null,
+        ['id' => 'estado_id', 'class' => 'form-control', 'required'])
+
+ !!}
 </div>
 
 <!-- Equipo Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('equipo_id', 'Equipo Id:') !!}
-    {!! Form::number('equipo_id', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::label('equipo_id', 'Equipo') !!}
+    {!!
+    Form::select(
+        'equipo_id',
+        select(\App\Models\CapacitacionEquipo::class, 'numero_seriie'),
+        null,
+        ['id' => 'equipo_id', 'class' => 'form-control', 'required'])
+!!}
 </div>
 
 <!-- Fecha Recepcion Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('fecha_recepcion', 'Fecha Recepcion:') !!}
-    {!! Form::text('fecha_recepcion', null, ['class' => 'form-control','id'=>'fecha_recepcion']) !!}
+    {!! Form::date('fecha_recepcion', null, ['class' => 'form-control','id'=>'fecha_recepcion']) !!}
 </div>
 
 @push('page_scripts')
@@ -50,7 +71,7 @@
 <!-- Fecha Diagnostico Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('fecha_diagnostico', 'Fecha Diagnostico:') !!}
-    {!! Form::text('fecha_diagnostico', null, ['class' => 'form-control','id'=>'fecha_diagnostico']) !!}
+    {!! Form::date('fecha_diagnostico', null, ['class' => 'form-control','id'=>'fecha_diagnostico']) !!}
 </div>
 
 @push('page_scripts')
@@ -68,7 +89,7 @@
 <!-- Fecha Solucion Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('fecha_solucion', 'Fecha Solucion:') !!}
-    {!! Form::text('fecha_solucion', null, ['class' => 'form-control','id'=>'fecha_solucion']) !!}
+    {!! Form::date('fecha_solucion', null, ['class' => 'form-control','id'=>'fecha_solucion']) !!}
 </div>
 
 @push('page_scripts')
@@ -77,14 +98,3 @@
     </script>
 @endpush
 
-<!-- Crearted At Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('crearted_at', 'Crearted At:') !!}
-    {!! Form::text('crearted_at', null, ['class' => 'form-control','id'=>'crearted_at']) !!}
-</div>
-
-@push('page_scripts')
-    <script type="text/javascript">
-        $('#crearted_at').datepicker()
-    </script>
-@endpush

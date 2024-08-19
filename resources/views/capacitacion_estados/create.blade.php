@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('titulo_pagina', 'Crear Capacitacion Estados')
+@section('titulo_pagina', 'Crear Capacitacion Estado')
 
 @section('content')
 
@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Crear Capacitacion Estados</h1>
+                    <h1>Crear Capacitacion Estado</h1>
                 </div>
                 <div class="col ">
                     <a class="btn btn-outline-info float-right"

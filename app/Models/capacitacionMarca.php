@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
  use Illuminate\Database\Eloquent\SoftDeletes;
  use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class CapacitacionEstados extends Model
+class capacitacionMarca extends Model
 {
 
     use SoftDeletes;
     use HasFactory;
 
-    public $table = 'capacitacion_estados';
+    public $table = 'capacitacion_marcas';
 
     public $fillable = [
         'nombre'
@@ -33,8 +33,13 @@ class CapacitacionEstados extends Model
 
     ];
 
-    public function capacitacionServicios(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function capacitacionEquipos(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(\App\Models\CapacitacionServicio::class, 'estado_id');
+        return $this->hasMany(\App\Models\CapacitacionEquipo::class, 'marca_id');
+    }
+
+    public function capacitacionModelos(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(\App\Models\CapacitacionModelo::class, 'marca_id');
     }
 }

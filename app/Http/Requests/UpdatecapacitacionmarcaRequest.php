@@ -2,10 +2,10 @@
 
 namespace App\Http\Requests;
 
-use App\Models\capacitacionmarca;
+use App\Models\capacitacionMarca;
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdatecapacitacionmarcaRequest extends FormRequest
+class UpdatecapacitacionMarcaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,13 @@ class UpdatecapacitacionmarcaRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = capacitacionmarca::$rules;
+        $rules = capacitacionMarca::$rules;
         
         return $rules;
     }
 
     public function messages()
     {
-        return capacitacionmarca::$messages;
+        return capacitacionMarca::$messages;
     }
 }

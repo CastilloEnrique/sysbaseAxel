@@ -28,7 +28,10 @@ class capacitacionClienteFactory extends Factory
             'Apellidos' => $this->faker->text($this->faker->numberBetween(5, 255)),
             'telefono' => $this->faker->text($this->faker->numberBetween(5, 8)),
             'direccion' => $this->faker->text($this->faker->numberBetween(5, 255)),
-            'cui' => $this->faker->text($this->faker->numberBetween(5, 13))
+            'cui' => $this->faker->text($this->faker->numberBetween(5, 13)),
+            'created_at' => $this->faker->date('Y-m-d H:i:s'),
+            'updated_at' => $this->faker->date('Y-m-d H:i:s'),
+            'deleted_at' => $this->faker->date('Y-m-d H:i:s')
         ];
     }
 }

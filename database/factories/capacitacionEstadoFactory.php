@@ -2,18 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\capacitacionMarca;
+use App\Models\capacitacionEstado;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 
-class capacitacionMarcaFactory extends Factory
+class capacitacionEstadoFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = capacitacionMarca::class;
+    protected $model = capacitacionEstado::class;
 
     /**
      * Define the model's default state.

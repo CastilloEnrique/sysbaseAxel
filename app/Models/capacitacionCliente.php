@@ -20,7 +20,6 @@ class capacitacionCliente extends Model
         'telefono',
         'direccion',
         'cui'
-
     ];
 
     protected $casts = [
@@ -36,7 +35,10 @@ class capacitacionCliente extends Model
         'Apellidos' => 'required|string|max:255',
         'telefono' => 'nullable|string|max:8',
         'direccion' => 'nullable|string|max:255',
-        'cui' => 'nullable|string|max:13'
+        'cui' => 'nullable|string|max:13',
+        'created_at' => 'nullable',
+        'updated_at' => 'nullable',
+        'deleted_at' => 'nullable'
     ];
 
     public static $messages = [

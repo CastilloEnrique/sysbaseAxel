@@ -26,7 +26,7 @@ class capacitacionServicioFactory extends Factory
      */
     public function definition()
     {
-        
+
         $user = User::first();
         if (!$user) {
             $user = User::factory()->create();
@@ -42,7 +42,7 @@ class capacitacionServicioFactory extends Factory
             'fecha_diagnostico' => $this->faker->date('Y-m-d'),
             'diagnostico' => $this->faker->text($this->faker->numberBetween(5, 65535)),
             'fecha_solucion' => $this->faker->date('Y-m-d'),
-            'crearted_at' => $this->faker->date('Y-m-d H:i:s'),
+            'created_at' => $this->faker->date('Y-m-d H:i:s'),
             'updated_at' => $this->faker->date('Y-m-d H:i:s'),
             'deleted_at' => $this->faker->date('Y-m-d H:i:s')
         ];

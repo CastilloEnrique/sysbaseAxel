@@ -54,7 +54,7 @@
 
 <!-- Crearted At Field -->
 <div class="col-sm-12">
-    {!! Form::label('crearted_at', 'Crearted At:') !!}
-    <p>{{ $capacitacionServicio->crearted_at }}</p>
+    {!! Form::label('created_at', 'Crearted At:') !!}
+    <p>{{ $capacitacionServicio->created_at }}</p>
 </div>
 
