@@ -28,11 +28,11 @@ class capacitacionServicio extends Model
     ];
 
     protected $casts = [
-        'fecha_recepcion' => 'date',
+        'fecha_recepcion' => 'date:d-m-Y',
         'problema' => 'string',
-        'fecha_diagnostico' => 'date',
+        'fecha_diagnostico' => 'date:d-m-Y',
         'diagnostico' => 'string',
-        'fecha_solucion' => 'date',
+        'fecha_solucion' => 'date:d-m-Y',
         'created_at' => 'datetime'
     ];
 

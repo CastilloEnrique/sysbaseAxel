@@ -4,7 +4,7 @@
         {!!
         Form::select(
             'marca_id',
-            select(\App\Models\CapacitacionMarca::class, 'nombre'),
+            select(\App\Models\CapacitacionMarca::class),
             null,
             ['id' => 'marca_id', 'class' => 'form-control', 'required'])
  !!}

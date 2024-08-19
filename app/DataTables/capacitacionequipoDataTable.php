@@ -40,7 +40,8 @@ class capacitacionEquipoDataTable extends DataTable
      */
     public function query(capacitacionEquipo $model)
     {
-        return $model->newQuery()->select($model->getTable().'.*');
+        return $model->newQuery()->select($model->getTable().'.*')
+            ->with('marca','modelo','tipos');
     }
 
     /**
@@ -107,11 +108,11 @@ class capacitacionEquipoDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            Column::make('modelo_id'),
-            Column::make('marca_id'),
-            Column::make('numero_seriie'),
+            Column::make('modelo_id')->data('modelo.nombre')->title('Modelo'),
+            Column::make('marca_id')->data('marca.nombre')->title('Marca'),
+            Column::make('numero_seriie')->data('numero_seriie')->title('Numero de Serie'),
             Column::make('imei'),
-            Column::make('tipos_id'),
+            Column::make('tipos_id')->data('tipos.nombre')->title('Tipo'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

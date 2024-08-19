@@ -61,4 +61,8 @@ class capacitacionEquipo extends Model
     {
         return $this->hasMany(\App\Models\CapacitacionServicio::class, 'equipo_id');
     }
+    public function getTextoAttribute()
+    {
+        return $this->modelo->nombre.' '.$this->marca->nombre.' '.$this->numero_seriie;
+    }
 }

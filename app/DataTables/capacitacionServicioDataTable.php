@@ -29,6 +29,11 @@ class capacitacionServicioDataTable extends DataTable
                 return $capacitacionServicio->id;
 
             })
+            ->editColumn('cliente_id',function (capacitacionServicio $capacitacionServicio){
+
+                return $capacitacionServicio->cliente->nombrecompleto;
+
+            })
             ->rawColumns(['action']);
     }
 
@@ -40,7 +45,9 @@ class capacitacionServicioDataTable extends DataTable
      */
     public function query(capacitacionServicio $model)
     {
-        return $model->newQuery()->select($model->getTable().'.*');
+        return $model->newQuery()->select($model->getTable().'.*')
+            ->with(['cliente','user','estado','equipo']);
+
     }
 
     /**
@@ -107,10 +114,10 @@ class capacitacionServicioDataTable extends DataTable
     protected function getColumns()
     {
         return [
-            Column::make('cliente_id'),
-            Column::make('user_id'),
-            Column::make('estado_id'),
-            Column::make('equipo_id'),
+            Column::make('cliente_id')->title('Cliente'),
+            Column::make('user_id')->data('user.name')->title('Usuario'),
+            Column::make('estado_id')->data('estado.nombre')->title('Estado'),
+            Column::make('equipo_id')->data('equipo.numero_seriie')->title('Equipo'),
             Column::make('fecha_recepcion'),
             Column::make('problema'),
             Column::make('fecha_diagnostico'),

@@ -49,4 +49,14 @@ class capacitacionCliente extends Model
     {
         return $this->hasMany(\App\Models\CapacitacionServicio::class, 'cliente_id');
     }
+
+    public function getNombreCompletoATtribute()
+    {
+        return $this->nombres . ' ' . $this->Apellidos;
+
+    }
+    public  function  getNombreCompleto()
+    {
+        return $this->nombres . ' ' . $this->Apellidos;
+    }
 }

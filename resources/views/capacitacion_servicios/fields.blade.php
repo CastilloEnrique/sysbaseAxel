@@ -5,7 +5,7 @@
     {!!
     Form::select(
         'cliente_id',
-        select(\App\Models\CapacitacionCliente::class, 'nombres'),
+        select(\App\Models\CapacitacionCliente::class, 'NombreCompleto'),
         null,
         ['id' => 'cliente_id', 'class' => 'form-control', 'required'])
 
@@ -15,14 +15,20 @@
 <!-- User Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('user_id', 'User Id:') !!}
-    {!!
-    Form::select(
-        'user_id',
-        select(\App\Models\User::class, 'name'),
-        null,
-        ['id' => 'user_id', 'class' => 'form-control', 'required'])
+    <div class="form-group col-sm-6">
+        {!! Form::label('user_id', __('Username')) !!}
+        {!! Form::text('user_name', Auth::user()->name,
+        ['id'=>'user_name', 'class' => 'form-control', 'readonly' => 'readonly']) !!}
+        {!! Form::hidden('user_id', Auth::user()->id) !!}
 
- !!}
+{{--    {!!--}}
+{{--    Form::select(--}}
+{{--        'user_id',--}}
+{{--        select(\App\Models\User::class, 'name'),--}}
+{{--        null,--}}
+{{--        ['id' => 'user_id', 'class' => 'form-control', 'required'])--}}
+
+{{-- !!}--}}
 </div>
 
 <!-- Estado Id Field -->
@@ -44,7 +50,7 @@
     {!!
     Form::select(
         'equipo_id',
-        select(\App\Models\CapacitacionEquipo::class, 'numero_seriie'),
+        select(\App\Models\CapacitacionEquipo::class, 'Texto'),
         null,
         ['id' => 'equipo_id', 'class' => 'form-control', 'required'])
 !!}

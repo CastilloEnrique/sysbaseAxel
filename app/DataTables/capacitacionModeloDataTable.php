@@ -40,7 +40,9 @@ class capacitacionModeloDataTable extends DataTable
      */
     public function query(capacitacionModelo $model)
     {
-        return $model->newQuery()->select($model->getTable().'.*');
+        return $model->newQuery()->select($model->getTable().'.*')
+            ->with('marca');
+
     }
 
     /**

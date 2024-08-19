@@ -1,7 +1,7 @@
 <!-- Modelo Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('modelo_id', 'Modelo') !!}
-    {!! Form::select('modelo_id', select(\App\Models\CapacitacionModelo::class),
+    {!! Form::select('modelo_id', select(\App\Models\CapacitacionModelo::class, 'nombre'),
  null,
   ['id' => 'modelo_id', 'class' => 'form-control', 'required']) !!}
 
@@ -11,7 +11,7 @@
 <!-- Marca Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('marca_id', 'Marca') !!}
-         {!! Form::select('marca_id', select(\App\Models\CapacitacionMarca::class, ),
+         {!! Form::select('marca_id', select(\App\Models\CapacitacionMarca::class, 'nombre'),
               null,
               ['id' => 'marca_id', 'class' => 'form-control', 'required'])
 
