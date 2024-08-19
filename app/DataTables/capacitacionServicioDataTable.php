@@ -116,7 +116,7 @@ class capacitacionServicioDataTable extends DataTable
             Column::make('fecha_diagnostico'),
             Column::make('diagnostico'),
             Column::make('fecha_solucion'),
-            Column::make('crearted_at'),
+            Column::make('created_at'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

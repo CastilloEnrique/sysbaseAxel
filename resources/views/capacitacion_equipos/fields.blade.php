@@ -3,7 +3,8 @@
     {!! Form::label('modelo_id', 'Modelo') !!}
     {!! Form::select(
         'modelo_id',
-        select(\App\Models\capacitacionModelo::class, 'nombre'),
+        select(\App\Models\capacitacionModelo::class, 'nombre')
+        ,null,
         ['id' => 'modelo_id', 'class' => 'form-control', 'style' => 'width: 100%']
 
     ) !!}
@@ -15,7 +16,8 @@
     {!! Form::label('marca_id', 'Marca') !!}
     {!! Form::select(
         'marca_id',
-        select(\App\Models\capacitacionMarcas::class, 'nombre'),
+        select(\App\Models\capacitacionMarcas::class, 'nombre')
+        ,null,
         ['id' => 'marca_id', 'class' => 'form-control', 'style' => 'width: 100%']
 
     ) !!}
@@ -36,11 +38,12 @@
 
 <!-- Tipos Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('tipo_id', 'Tipo') !!}
+    {!! Form::label('tipos_id', 'Tipo') !!}
     {!! Form::select(
-        'tipo_id',
-        select(\App\Models\capacitacion::class, 'nombre'),
-        ['id' => 'marca_id', 'class' => 'form-control', 'style' => 'width: 100%']
+        'tipos_id',
+        select(\App\Models\capacitacionTipo::class, 'nombre'),
+        null,
+        ['id' => 'tipo_id', 'class' => 'form-control', 'style' => 'width: 100%']
 
     ) !!}
 </div>

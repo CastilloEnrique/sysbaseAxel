@@ -20,6 +20,7 @@ class capacitacionCliente extends Model
         'telefono',
         'direccion',
         'cui'
+
     ];
 
     protected $casts = [

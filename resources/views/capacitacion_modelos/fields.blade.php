@@ -3,7 +3,8 @@
     {!! Form::label('marca_id', 'Marca:') !!}
     {!! Form::select(
         'marca_id',
-        select(\App\Models\Capacitacion_marca::class, 'nombre'),
+        select(\App\Models\CapacitacionMarca::class, 'nombre'),
+        null,
         ['id' => 'marca_id', 'class' => 'form-control', 'style' => 'width: 100%']
 
     ) !!}

@@ -1,7 +1,14 @@
 <!-- Cliente Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('cliente_id', 'Cliente Id:') !!}
-    {!! Form::number('cliente_id', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::label('clientes_id','Cliente:') !!}
+    {!!
+        Form::select(
+            'clientes_id',
+            select(\App\Models\CapacitacionMarca::class, 'nombre')
+            , null
+            , ['id'=>'models','class' => 'form-control','style'=>'width: 100%']
+        )
+    !!}
 </div>
 
 <!-- User Id Field -->
