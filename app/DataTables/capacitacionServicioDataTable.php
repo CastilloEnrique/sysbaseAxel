@@ -120,6 +120,7 @@ class capacitacionServicioDataTable extends DataTable
             Column::make('equipo_id')->data('equipo.numero_seriie')->title('Equipo'),
             Column::make('fecha_recepcion'),
             Column::make('problema'),
+            Column::make('precio'),
             Column::make('fecha_diagnostico'),
             Column::make('diagnostico'),
             Column::make('fecha_solucion'),

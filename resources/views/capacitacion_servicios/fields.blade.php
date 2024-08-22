@@ -12,24 +12,16 @@
  !!}
 </div>
 
-<!-- User Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('user_id', 'User Id:') !!}
-    <div class="form-group col-sm-6">
-        {!! Form::label('user_id', __('Username')) !!}
-        {!! Form::text('user_name', Auth::user()->name,
-        ['id'=>'user_name', 'class' => 'form-control', 'readonly' => 'readonly']) !!}
-        {!! Form::hidden('user_id', Auth::user()->id) !!}
+{{--<!-- User Id Field -->--}}
+{{--    <div class="form-group col-sm-6">--}}
+{{--        {!! Form::label('user_id', __('Username')) !!}--}}
+{{--        {!! Form::text('user_name', Auth::user()->name,--}}
+{{--        ['id'=>'user_name', 'class' => 'form-control', 'readonly' => 'readonly']) !!}--}}
+{{--        {!! Form::hidden('user_id', Auth::user()->id) !!}--}}
 
-{{--    {!!--}}
-{{--    Form::select(--}}
-{{--        'user_id',--}}
-{{--        select(\App\Models\User::class, 'name'),--}}
-{{--        null,--}}
-{{--        ['id' => 'user_id', 'class' => 'form-control', 'required'])--}}
 
-{{-- !!}--}}
-</div>
+{{--</div>--}}
+{{--</div>--}}
 
 <!-- Estado Id Field -->
 <div class="form-group col-sm-6">
@@ -71,7 +63,7 @@
 <!-- Problema Field -->
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('problema', 'Problema:') !!}
-    {!! Form::textarea('problema', null, ['class' => 'form-control', 'required', 'maxlength' => 65535, 'maxlength' => 65535]) !!}
+    {!! Form::textarea('problema', null, ['class' => 'form-control', 'required', 'maxlength' => 65535]) !!}
 </div>
 
 <!-- Fecha Diagnostico Field -->
@@ -89,7 +81,13 @@
 <!-- Diagnostico Field -->
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('diagnostico', 'Diagnostico:') !!}
-    {!! Form::textarea('diagnostico', null, ['class' => 'form-control', 'maxlength' => 65535, 'maxlength' => 65535]) !!}
+    {!! Form::textarea('diagnostico', null, ['class' => 'form-control',  'maxlength' => 65535]) !!}
+</div>
+
+<!-- precio Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('precio', 'Precio:') !!}
+    {!! Form::number('precio', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Fecha Solucion Field -->
@@ -97,6 +95,7 @@
     {!! Form::label('fecha_solucion', 'Fecha Solucion:') !!}
     {!! Form::date('fecha_solucion', null, ['class' => 'form-control','id'=>'fecha_solucion']) !!}
 </div>
+
 
 @push('page_scripts')
     <script type="text/javascript">

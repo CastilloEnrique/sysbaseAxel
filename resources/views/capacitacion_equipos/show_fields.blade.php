@@ -1,13 +1,13 @@
 <!-- Modelo Id Field -->
 <div class="col-sm-12">
     {!! Form::label('modelo_id', 'Modelo Id:') !!}
-    <p>{{ $capacitacionEquipo->modelo_id }}</p>
+    <p>{{ $capacitacionEquipo->modelo->nombre }}</p>
 </div>
 
 <!-- Marca Id Field -->
 <div class="col-sm-12">
     {!! Form::label('marca_id', 'Marca Id:') !!}
-    <p>{{ $capacitacionEquipo->marca_id }}</p>
+    <p>{{ $capacitacionEquipo->marca->nombre }}</p>
 </div>
 
 <!-- Numero Seriie Field -->
@@ -25,6 +25,6 @@
 <!-- Tipos Id Field -->
 <div class="col-sm-12">
     {!! Form::label('tipos_id', 'Tipos Id:') !!}
-    <p>{{ $capacitacionEquipo->tipos_id }}</p>
+    <p>{{ $capacitacionEquipo->tipos->nombre}}</p>
 </div>
 

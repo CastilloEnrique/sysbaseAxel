@@ -21,6 +21,7 @@ class capacitacionServicio extends Model
         'equipo_id',
         'fecha_recepcion',
         'problema',
+        'precio',
         'fecha_diagnostico',
         'diagnostico',
         'fecha_solucion',
